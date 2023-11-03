@@ -58,3 +58,22 @@ body {
   overflow: scroll;
   height: 200px;
 }
+
+.corrections {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: 1;
+  min-height: 500px;
+  overflow: scroll;
+}
+
+.corrections.hidde {
+  display: none;
+}
+
+.file-corrections {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}

@@ -15,7 +15,8 @@ const input = document.getElementById("file");
 const selectedFiles = document.querySelector(".selectedFiles");
 const alertDom = document.querySelector(".alert");
 
-const currentTarjeton = document.createElement("div");
+const corrections = document.getElementsByClassName("corrections hidde")[0];
+
 let alert = "";
 let showInputForm = false;
 let showInputParams = true;
@@ -51,11 +52,30 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
     
     let files = input.files;
+    corrections.classList = "corrections";
 
-    let fileData = await files[0].text()
-    currentTarjeton.innerHTML = fileData
+    for (const file of files) {
+        let fileData = await file.text()
+        let currentTarjeton = document.createElement("div");
+        currentTarjeton.innerHTML = fileData
 
-    verifyLinks(currentTarjeton);
+        let linksInfo = verifyLinks(currentTarjeton);
+        console.log(linksInfo)
+
+        let fileCorrection = document.createElement("div");
+        let fileCorrections = `<div class="file-corrections">
+                <p>${file.name}</p>
+                <br>
+                <ul>
+                    <li>${linksInfo[0]}</li> 
+                    <li>${linksInfo[1]}</li> 
+                    <li>${linksInfo[2]}</li> 
+                </ul>
+        </div>`
+
+        fileCorrection.innerHTML += fileCorrections
+        corrections.appendChild(fileCorrection);
+    }
 })
 
 function verifyLinks(file) {
@@ -73,26 +93,33 @@ function verifyLinks(file) {
     let checkBannerLink = checkUrls(bannerLinkFromParams, banner)
     let checkEmailLink = checkUrls(emailLinkFromParams, email)
 
+    let info = [];
+
     if(!checkFinalLink) {
-        console.log(
-            "Hay un error en este link: " + finalLink + 
-            "\nEl valor correcto es: " + finalLinkFromParams
-        );
+        info.push("Hay un error en este link: " + finalLink + 
+        "\nEl valor correcto es: " + finalLinkFromParams)
+    } else {
+        info.push("Final link correct");
     }
 
     if(!checkBannerLink) {
-        console.log(
+        info.push(
             "Hay un error en este link: " + banner + 
             "\nEl valor correcto es: " + bannerLinkFromParams 
-        );
+        )
+    } else {
+        info.push("Banner and button link correct");
     }
 
     if(!checkEmailLink) {
-        console.log(
+        info.push(
             "Hay un error en este link: " + email + 
             "\nEl valor correcto es: " + emailLinkFromParams 
-        );
+        )
+    } else {
+        info.push("Email link correct");
     }
+    return info;
 }
 
 function checkUrls(urlFromParams, urlFromFile) {
