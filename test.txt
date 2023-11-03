@@ -1,0 +1,6 @@
+link final: https://emkt.uneatlantico.es/uneatlantico/2023/grados/GCA/Envio_UNEA_GCA1023_pr.html
+link banner y boton: https://www.uneatlantico.es/facultad-de-ciencias-sociales-y-humanidades/estudios-grado-oficial-grado-en-comunicacion-audiovisual-experto-universitario-en-animacion-digital-y-3d
+link a sede: https://www.uneatlantico.es/
+furriel: ?furriel=8ffb51175930173972e4f9b96bd0b8b68f98e879
+kw: &kw=UNEA_GCA_1023
+matomo: &mtm_campaign=e-mailing%20a%20BD%20UNEATLANTICO_UNEA_GCA_1023&mtm_medium=email&mtm_cid=UNEA_GCA_1023

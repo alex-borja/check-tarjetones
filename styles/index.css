@@ -32,8 +32,13 @@ body {
 }
 
 .form-section {
+  display: block;
   text-align: center;
   min-width: 30%;
+}
+
+.form-section.hidden {
+  display: none;
 }
 
 .form-content {
