@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarjetones Checker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Revisa tarjetones genericos UNEATLANTICO</h1>
+      </div>
+      <div class="params-tarjetones">
+        <form class="info-tarjetones">
+          <label>Introduce los parametros de tu tarjeton</label>
+          <br>
+          <br>
+          <input type="text" placeholder="Sede" id="sede"></input>
+          <input type="text" placeholder="Link final" id="linkFinal"></input>
+          <input type="text" placeholder="Link de banner y botón" id="linkBanner"></input>
+          <input type="text" placeholder="Furriel" id="furriel"></input>
+          <input type="text" placeholder="KW" id="kw"></input>
+          <input type="text" placeholder="matomo" id="matomo"></input>
+          <input type="text" placeholder="Pixel de seguimiento" id="pixel"></input>
+          <br>
+          <br>
+          <button type="submit">Seguir</button>
+        </form>
+      </div>
+      <div class="form-section">
+        <form class="form">
+          <div class="form-content">
+            <label>Introduce un archivo compilado: </label>
+            <div class="form-input">
+              <input
+                type="file"
+                accept=".html"
+                name="file"
+                id="file"
+                multiple
+              />
+              <button type="submit">Subir</button>
+            </div>
+          </div>
+        </form>
+        <br />
+        <p class="selectedFiles">Archivos a revisar:</p>
+      </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="src/module.js"></script>
+  </body>
+</html>
